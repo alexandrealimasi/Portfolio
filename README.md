@@ -1,74 +1,82 @@
-# React + TypeScript + Vite
+# Alexandre Alimasi – Full Stack Mobile Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi! I’m **Alexandre Alimasi**, a **Full Stack Mobile Developer** passionate about building reliable, scalable, and user-friendly mobile applications. I specialize in delivering end-to-end solutions from concept to launch, ensuring seamless integration between frontend and backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Bio
 
-## React Compiler
+> Hi, I'm a Full Stack Mobile Developer with experience delivering end-to-end mobile solutions from concept to launch. I specialize in building reliable, scalable, and user-friendly applications while ensuring seamless integration between frontend and backend. Passionate about creating impactful digital products, I thrive in dynamic environments where innovation and quality drive success.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technical Skills
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Mobile Development
+Flutter, React Native, Java, Kotlin, Swift
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Frontend
+React, Vue.js, JavaScript, TypeScript, HTML/CSS
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Backend
+Node.js, Laravel, Flask, API Development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Tools & Technologies
+Git, Firebase, REST APIs, Mobile Testing, CI/CD
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💼 Work Experience
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# Portfolio
+### TripHoppa – Mobile Developer (2025 – Present, Remote)
+- Design and implement mobile applications for Android and iOS.
+- Integrate APIs, databases, and third-party services.
+- Optimize performance, usability, and responsiveness.
+- Debug, test, and maintain apps to ensure reliability.
+**Technologies:** Flutter, React Native, API Integration
+
+### VibesLinks – Mobile Developer (03/2025 – 07/2025, Remote)
+- Same responsibilities as above.
+**Technologies:** Flutter, React Native, API Integration
+
+### Piyata.tech – Mobile Developer (2023 – 2024, Remote)
+- Same responsibilities as above.
+**Technologies:** Flutter, React Native, Mobile Development
+
+### Subnet Congo – Mobile and Full Stack Web Developer (01/2020 – 12/2023, Goma, Congo)
+- Design, develop, and maintain mobile applications for Android and iOS.
+- Build and manage web applications, including frontend and backend systems.
+- Integrate APIs, databases, and third-party services across platforms.
+- Ensure performance, scalability, and seamless user experiences.
+- Debug, test, and deploy end-to-end solutions while collaborating with cross-functional teams.
+**Technologies:** Flutter, React, Node.js, Laravel, Full Stack Development
+
+### Updev – Mobile Developer (03/2020 – 05/2021, Goma/DRC)
+- Same responsibilities as above.
+**Technologies:** Flutter, Mobile Development, API Integration
+
+---
+
+## 🎓 Education
+
+**Computer Science** – University of Rwanda (09/2017 – 05/2021, Kigali, Rwanda)
+
+---
+
+## 🌐 Languages
+
+- English  
+- French
+
+---
+
+## 📫 Contact
+
+- **Email:** [alexandrealimasi1@gmail.com](mailto:alexandrealimasi1@gmail.com)  
+- **Phone:** 0789004718  
+- **GitHub:** [github.com/alexandrealimasi](https://github.com/alexandrealimasi)  
+- **LinkedIn:** [linkedin.com/in/alimasi-alexandre-a764981a1](https://linkedin.com/in/alimasi-alexandre-a764981a1)
+
+---
+
+> “Building apps that solve real problems with clean code and great user experience.”
