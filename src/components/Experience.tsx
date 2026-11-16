@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { workExperience } from '../data/ portfolio'
-import { MapPin, Calendar, ChevronRight } from 'lucide-react'
+import { workExperience } from '../data/portfolio'
+import { MapPin, Calendar, ChevronRight, Briefcase } from 'lucide-react'
 
 const Experience = () => {
   const experienceRef = useRef<HTMLElement>(null)
@@ -42,8 +42,8 @@ const Experience = () => {
             Work <span className="text-purple-400">Experience</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto rounded-full"></div>
-          <p className="text-gray-400 mt-6 text-lg">
-            My professional journey building impactful mobile and web solutions
+          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+            My career path across mobile engineering, full-stack web platforms, desktop applications, and systems administration.
           </p>
         </div>
 
@@ -67,19 +67,30 @@ const Experience = () => {
 
               {/* Content Card */}
               <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}`}>
-                <div className="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10">
+                <div className="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-7 md:p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 text-left">
                   {/* Company Info */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{job.title}</h3>
-                    <h4 className="text-xl text-blue-400 font-semibold mb-3">{job.company}</h4>
+                  <div className="mb-5">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                      <h3 className="text-xl md:text-2xl font-bold text-white">{job.title}</h3>
+                      {job.type && (
+                        <span className="text-xs px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 font-medium">
+                          {job.type}
+                        </span>
+                      )}
+                    </div>
                     
-                    <div className="flex flex-wrap gap-4 text-gray-400 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Calendar size={16} />
+                    <h4 className="text-lg md:text-xl text-blue-400 font-semibold mb-3 flex items-center gap-2">
+                      <Briefcase size={18} className="text-purple-400" />
+                      <span>{job.company}</span>
+                    </h4>
+                    
+                    <div className="flex flex-wrap gap-4 text-gray-400 text-xs md:text-sm">
+                      <div className="flex items-center gap-1.5">
+                        <Calendar size={15} className="text-slate-400" />
                         <span>{job.period}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin size={16} />
+                      <div className="flex items-center gap-1.5">
+                        <MapPin size={15} className="text-slate-400" />
                         <span>{job.location}</span>
                       </div>
                     </div>
@@ -87,9 +98,9 @@ const Experience = () => {
 
                   {/* Job Description */}
                   <div className="mb-6">
-                    <ul className="space-y-3">
+                    <ul className="space-y-2.5">
                       {job.description.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-gray-300">
+                        <li key={idx} className="flex items-start gap-2.5 text-gray-300 text-sm md:text-base">
                           <ChevronRight size={16} className="text-purple-400 mt-1 flex-shrink-0" />
                           <span className="leading-relaxed">{item}</span>
                         </li>
@@ -98,11 +109,11 @@ const Experience = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-700/50">
                     {job.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+                        className="px-3 py-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 rounded-full text-xs font-medium border border-blue-500/30"
                       >
                         {tech}
                       </span>
@@ -117,9 +128,9 @@ const Experience = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Work Together?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to Collaborate?</h3>
             <p className="text-gray-300 mb-6">
-              I'm always interested in new opportunities and exciting projects.
+              I am open to discuss contract roles, freelance mobile/full-stack projects, and engineering opportunities.
             </p>
             <button
               onClick={() => {
@@ -136,7 +147,7 @@ const Experience = () => {
         </div>
       </div>
 
-      <style >{`
+      <style>{`
         @keyframes fade-in {
           from {
             opacity: 0;

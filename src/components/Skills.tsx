@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { skills } from '../data/ portfolio'
-import { Smartphone, Globe, Server, Wrench } from 'lucide-react'
+import { skills } from '../data/portfolio'
+import { Smartphone, Globe, Server, Monitor, Database, CheckCircle, Code } from 'lucide-react'
 
 const Skills = () => {
   const skillsRef = useRef<HTMLElement>(null)
@@ -45,17 +45,33 @@ const Skills = () => {
       title: 'Backend Development',
       icon: Server,
       skills: skills.backend,
-      color: 'from-green-500 to-teal-500',
-      bgColor: 'from-green-600/10 to-teal-600/10',
-      borderColor: 'border-green-500/30'
+      color: 'from-emerald-500 to-teal-500',
+      bgColor: 'from-emerald-600/10 to-teal-600/10',
+      borderColor: 'border-emerald-500/30'
     },
     {
-      title: 'Tools & Technologies',
-      icon: Wrench,
-      skills: skills.tools,
-      color: 'from-orange-500 to-red-500',
-      bgColor: 'from-orange-600/10 to-red-600/10',
-      borderColor: 'border-orange-500/30'
+      title: 'Desktop Development',
+      icon: Monitor,
+      skills: skills.desktop,
+      color: 'from-indigo-500 to-violet-500',
+      bgColor: 'from-indigo-600/10 to-violet-600/10',
+      borderColor: 'border-indigo-500/30'
+    },
+    {
+      title: 'Database Management',
+      icon: Database,
+      skills: skills.database,
+      color: 'from-amber-500 to-orange-500',
+      bgColor: 'from-amber-600/10 to-orange-600/10',
+      borderColor: 'border-amber-500/30'
+    },
+    {
+      title: 'Core Competencies',
+      icon: CheckCircle,
+      skills: skills.competencies,
+      color: 'from-teal-500 to-cyan-500',
+      bgColor: 'from-teal-600/10 to-cyan-600/10',
+      borderColor: 'border-teal-500/30'
     }
   ]
 
@@ -69,7 +85,6 @@ const Skills = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-slate-800/50"></div>
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-      <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-teal-500/5 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -78,108 +93,87 @@ const Skills = () => {
             Technical <span className="text-teal-400">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-400 mx-auto rounded-full"></div>
-          <p className="text-gray-400 mt-6 text-lg">
-            Technologies and tools I use to bring ideas to life
+          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+            Comprehensive technology stack across cross-platform mobile, frontend, backend services, desktop, and database systems.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => {
             const Icon = category.icon
             return (
               <div
                 key={index}
-                className={`bg-gradient-to-br ${category.bgColor} backdrop-blur-sm rounded-2xl p-8 border ${category.borderColor} hover:shadow-2xl transition-all duration-300 hover:scale-105 transform group`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`bg-gradient-to-br ${category.bgColor} backdrop-blur-sm rounded-2xl p-7 border ${category.borderColor} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 transform group flex flex-col justify-between`}
               >
-                {/* Category Header */}
-                <div className="flex items-center mb-6">
-                  <div className={`p-3 bg-gradient-to-r ${category.color} rounded-full mr-4 group-hover:scale-110 transition-transform duration-200`}>
-                    <Icon size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white">{category.title}</h3>
-                </div>
-
-                {/* Skills List */}
-                <div className="grid grid-cols-2 gap-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      className="group/skill relative"
-                    >
-                      <div className="flex items-center justify-between p-3 bg-slate-800/30 rounded-lg border border-slate-700/50 hover:border-slate-600/50 transition-all duration-200 group-hover/skill:bg-slate-800/50">
-                        <span className="text-gray-200 font-medium group-hover/skill:text-white transition-colors">
-                          {skill}
-                        </span>
-                        
-                        {/* Skill Level Indicator */}
-                        <div className="flex gap-1">
-                          {[...Array(5)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                i < Math.floor(Math.random() * 2) + 3
-                                  ? `bg-gradient-to-r ${category.color}`
-                                  : 'bg-slate-600'
-                              }`}
-                              style={{ transitionDelay: `${i * 50}ms` }}
-                            />
-                          ))}
-                        </div>
-                      </div>
+                <div>
+                  {/* Category Header */}
+                  <div className="flex items-center mb-5">
+                    <div className={`p-3 bg-gradient-to-r ${category.color} rounded-xl mr-3 group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-black/20`}>
+                      <Icon size={20} className="text-white" />
                     </div>
-                  ))}
+                    <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                  </div>
+
+                  {/* Skills List */}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-3 py-1.5 bg-slate-800/70 text-gray-200 rounded-lg text-xs md:text-sm border border-slate-700/60 font-medium group-hover:border-slate-500/60 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Progress Indicator */}
-                <div className="mt-6 pt-6 border-t border-slate-700/50">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 text-sm">Proficiency</span>
-                    <span className="text-gray-300 text-sm">Expert</span>
-                  </div>
-                  <div className="w-full bg-slate-700/50 rounded-full h-2">
-                    <div 
-                      className={`h-2 bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
-                      style={{ width: `${85 + Math.floor(Math.random() * 15)}%` }}
-                    ></div>
-                  </div>
+                <div className="mt-6 pt-4 border-t border-slate-700/40 flex items-center justify-between text-xs text-gray-400">
+                  <span className="flex items-center gap-1.5">
+                    <Code size={14} className="text-teal-400" />
+                    Production Ready
+                  </span>
+                  <span className="font-semibold text-teal-300">Active Stack</span>
                 </div>
               </div>
             )
           })}
         </div>
 
-        {/* Additional Info */}
+        {/* Additional Architecture Banner */}
         <div className="mt-16 text-center">
           <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 border border-slate-700/50 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Continuous Learning
+              Architecture, Optimization & Clean Code
             </h3>
-            <p className="text-gray-300 leading-relaxed">
-              Technology is constantly evolving, and I'm passionate about staying current with the latest developments. 
-              I regularly explore new frameworks, tools, and best practices to deliver cutting-edge solutions.
+            <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              Committed to building scalable software, designing well-structured REST APIs, managing robust databases, and creating intuitive user experiences that solve real business problems.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 mb-2">5+</div>
-                <div className="text-gray-300">Years of Experience</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <div className="p-4 bg-slate-900/40 rounded-xl border border-slate-700/40">
+                <div className="text-2xl font-bold text-blue-400 mb-1">Flutter & RN</div>
+                <div className="text-gray-400 text-xs">Cross-Platform Mobile</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400 mb-2">15+</div>
-                <div className="text-gray-300">Technologies Mastered</div>
+              <div className="p-4 bg-slate-900/40 rounded-xl border border-slate-700/40">
+                <div className="text-2xl font-bold text-purple-400 mb-1">React & Vue</div>
+                <div className="text-gray-400 text-xs">Modern Web Frontend</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-teal-400 mb-2">50+</div>
-                <div className="text-gray-300">Projects Delivered</div>
+              <div className="p-4 bg-slate-900/40 rounded-xl border border-slate-700/40">
+                <div className="text-2xl font-bold text-emerald-400 mb-1">Node & Python</div>
+                <div className="text-gray-400 text-xs">Resilient Backend Services</div>
+              </div>
+              <div className="p-4 bg-slate-900/40 rounded-xl border border-slate-700/40">
+                <div className="text-2xl font-bold text-amber-400 mb-1">Electron</div>
+                <div className="text-gray-400 text-xs">Desktop Engineering</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <style >{`
+      <style>{`
         @keyframes fade-in {
           from {
             opacity: 0;
@@ -193,14 +187,6 @@ const Skills = () => {
         
         .animate-fade-in {
           animation: fade-in 0.8s ease-out forwards;
-        }
-        
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        
-        .animation-delay-4000 {
-          animation-delay: 4s;
         }
       `}</style>
     </section>
